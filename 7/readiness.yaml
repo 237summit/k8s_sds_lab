@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: readiness-appjs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: appjs
+  template:
+    metadata:
+      labels:
+        app: appjs
+    spec:
+      containers:
+      - name: appjs-container
+        image: smlinux/appjs
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          exec:
+            command:
+            - ls
+            - /tmp/datafile

@@ -1,0 +1,2 @@
+# echo "1234" | base64
+# echo "MTIzNAo=" | base64 --decode
