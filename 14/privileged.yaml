@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: main
-    image: alpine
+    image: public.ecr.aws/docker/library/alpine:latest 
     command: ["/bin/sleep", "999999"]
     securityContext:
       privileged: true
